@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcane Syndicate Dossier</title>
+  <style>body{margin:0;font-family:'Courier New',Courier,monospace;background-color:#0b0e1c;color:#d0d0d0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh}header{width:100%;padding:1rem;background-color:#141824;display:flex;align-items:center;justify-content:center;flex-direction:column}header img{max-width:100px;margin-bottom:0.5rem}h1{margin:0;font-size:1.2rem;color:#00b0c0;text-align:center}main{padding:2rem;max-width:700px;text-align:left}h2{color:#00b0c0;margin-top:1rem}p,ul{margin:0.5rem 0}footer{padding:1rem;font-size:0.8rem;color:#555;text-align:center}a.back{display:inline-block;margin-top:1rem;color:#00b0c0;text-decoration:none;border:1px solid #00b0c0;padding:0.5rem;border-radius:4px;transition:background 0.3s}a.back:hover{background-color:#00b0c0;color:#0b0e1c}blockquote{border-left:2px solid #00b0c0;padding-left:1rem;color:#00b0c0;margin:1rem 0}</style>
+</head>
+<body>
+  <header>
+    <img src="https://dummyimage.com/200x200/00b0c0/ffffff&text=APA" alt="APA Logo" />
+    <h1>ACTIVE THREAT DOSSIER – ARCANE SYNDICATE</h1>
+  </header>
+
+  <main>
+    <h2>ENTITY: Arcane Syndicate (Designation: A-S)</h2>
+    <p><strong>Compiled by:</strong> APA Intelligence & Analysis Division<br />
+    <strong>Clearance Level:</strong> T-4 or above<br />
+    <strong>Last Updated:</strong> [Today’s Date]</p>
+
+    <h2>SUMMARY:</h2>
+    <p>
+      The Arcane Syndicate (A-S) is a loosely coordinated network of magical black market operators, rogue mages, and privateers. Each Ring is controlled by a "Ringmaster" whose operational focus and goals vary. No central command structure has been confirmed. Inter-Ring cooperation is rare and opportunistic.
+    </p>
+
+    <h2>KNOWN RINGMASTERS:</h2>
+    <blockquote>Note: Intelligence remains fragmentary. Relations with one Ringmaster offer no guarantees regarding others.</blockquote>
+    <ul>
+      <li><strong>"Thorn"</strong> – Western Europe. Operates in Romanian and Italian arcane black markets.</li>
+      <li><strong>Dr. Zhen Rao</strong> – South China. Expelled academic focused on biological arcana and fleshcrafting.</li>
+      <li><strong>"Mistress Kerosene"</strong> – Southeast Asia. Specializes in fire enchantments. Known former SoA associate.</li>
+      <li><strong>"Nails"</strong> – Central US. Supplier of anti-scrying tech. Evaded APA capture 7 times.</li>
+      <li><strong>"Goldeye"</strong> – Southern Africa. Linked to weapons trade and Tier 1 Upington breach.</li>
+    </ul>
+
+    <h2>CURRENT INTELLIGENCE OBJECTIVES:</h2>
+    <ul>
+      <li>Assess inter-Ring communications and possible structural hierarchy.</li>
+      <li>Track Syndicate–SoA collaborations and shared assets.</li>
+      <li>Capture and reverse-engineer “Black Wax Seal” anti-scrying devices.</li>
+      <li>Interrogate clients and proxies for Ringmaster origin data.</li>
+    </ul>
+
+    <h2>RELATED INCIDENTS:</h2>
+    <ul>
+      <li><strong>Budapest Transit Node Explosion (2008):</strong> Failed teleportation portal. 11 civilian deaths. Syndicate materials confirmed on-site.</li>
+      <li><strong>Russian Whisper Plague (2018):</strong> Curse transmitted via sound, allegedly brokered by A-S for SoA deployment. Investigation ongoing.</li>
+    </ul>
+
+    <h2>APA RISK PROFILE:</h2>
+    <ul>
+      <li><strong>Threat Tier:</strong> Variable (T2–T5 by Ring)</li>
+      <li><strong>Stability:</strong> Low</li>
+      <li><strong>Infiltration Risk:</strong> Moderate–High</li>
+      <li><strong>Public Exposure Risk:</strong> Medium</li>
+      <li><strong>Affiliations:</strong> SoA (transactional), private collectors, OotV exiles</li>
+    </ul>
+
+    <h2>RECOMMENDED PROTOCOLS:</h2>
+    <ul>
+      <li>Assume no Ring-to-Ring alignment. Treat each cell independently.</li>
+      <li>Engage regional authorities via secure, firewalled communication only.</li>
+      <li>Route all A-S materials to Arcane Containment for triage and classification.</li>
+      <li>Capture of Ringmasters authorized when tactical conditions permit.</li>
+    </ul>
+
+    <a href="intelligence.html" class="back" onclick="playBeep();">&larr; Return to Intelligence & Analysis Division</a>
+  </main>
+
+  <footer>
+    APA INTERNAL USE ONLY - UNAUTHORIZED ACCESS WILL BE LOGGED
+  </footer>
+
+  <audio id="sfx" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <script>
+    function playBeepAndNavigate(e) {
+      e.preventDefault();
+      const audio = document.getElementById('sfx');
+      const link = e.currentTarget.getAttribute('href');
+
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().then(() => {
+          setTimeout(() => {
+            window.location.href = link;
+          }, 300);
+        }).catch(() => {
+          window.location.href = link;
+        });
+      } else {
+        window.location.href = link;
+      }
+    }
+
+    function attachAudioListeners() {
+      document.querySelectorAll('a[href]').forEach(link => {
+        link.removeEventListener('click', playBeepAndNavigate);
+        link.addEventListener('click', playBeepAndNavigate);
+      });
+    }
+
+    attachAudioListeners();
+    window.addEventListener('pageshow', attachAudioListeners);
+  </script>
+</body>
+</html>
+
+

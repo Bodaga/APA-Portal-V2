@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talent Acquisition Request</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0b1526;
+      color: #c0d5f9;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #7fb4ff;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #162239;
+      color: #c0d5f9;
+      border: 1px solid #445c7a;
+    }
+    input[type="submit"] {
+      background-color: #7fb4ff;
+      color: #0b1526;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #5a9bf3;
+    }
+    .nav {
+      margin-top: 30px;
+    }
+    .nav a {
+      color: #7fb4ff;
+      text-decoration: none;
+    }
+    .beep {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio id="beep" class="beep" autoplay>
+    <source src="beep.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Talent Acquisition Request</h1>
+  <form action="" method="post" onsubmit="submitRequest(event)">
+    <label for="division">Requesting Division</label>
+    <select id="division" name="division" required>
+      <option value="">-- Select Division --</option>
+      <option value="Operations">Operations</option>
+      <option value="Intelligence & Analysis">Intelligence & Analysis</option>
+      <option value="Research">Research</option>
+      <option value="Logistics & Engineering">Logistics & Engineering</option>
+      <option value="HR">HR</option>
+    </select>
+
+    <label for="position">Role / Specialization Needed</label>
+    <input type="text" id="position" name="position" required>
+
+    <label for="urgency">Urgency Level</label>
+    <select id="urgency" name="urgency" required>
+      <option value="Low">Low</option>
+      <option value="Moderate">Moderate</option>
+      <option value="High">High</option>
+      <option value="Critical">Critical</option>
+    </select>
+
+    <label for="justification">Justification</label>
+    <textarea id="justification" name="justification" rows="5" required></textarea>
+
+    <input type="submit" value="Submit Request">
+  </form>
+
+  <div id="confirmation" style="display: none;">
+    <p><strong>Request submitted successfully.</strong> HR will process the requisition.</p>
+  </div>
+
+  <div class="nav">
+    <a href="hr.html">&#8592; Return to HR Division</a>
+  </div>
+
+  <script>
+    function submitRequest(event) {
+      event.preventDefault();
+      document.querySelector("form").style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+      document.getElementById("beep").play();
+    }
+  </script>
+</body>
+</html>

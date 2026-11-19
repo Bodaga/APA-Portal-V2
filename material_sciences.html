@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APA INTERNAL PORTAL – Material Sciences</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0b0e1c;
+      color: #d0d0d0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: #00b0c0;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    p {
+      color: #a0a0a0;
+      line-height: 1.6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+
+    th, td {
+      border: 1px solid #00b0c0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #10192e;
+    }
+
+    a.button {
+      color: #00b0c0;
+      text-decoration: none;
+      border: 2px solid #00b0c0;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #00b0c0;
+      color: #0b0e1c;
+    }
+  </style>
+</head>
+<body>
+  <h1>APA RESEARCH BRIEF – MATERIAL SCIENCES</h1>
+
+  <section>
+    <h2>OVERVIEW</h2>
+    <p>The Material Sciences unit within the APA Research Division is tasked with the analysis, containment, and weaponization countermeasures of enchanted materials. This branch directly supports field operations by providing advanced containment materials, anti-magic composites, and intelligence on artifact structural weaknesses.</p>
+  </section>
+
+  <section>
+    <h2>FOCUS AREAS</h2>
+
+    <h3>Analysis of Enchanted Materials</h3>
+    <p>Conduct structural and energetic assessments of magically imbued metals, stones, fabrics, and organic matter. Identify resonance frequencies, mana retention capabilities, and risk factors for leakage or sentience.</p>
+
+    <h3>Development of Anti-Magic Composites</h3>
+    <p>Research and produce materials capable of absorbing, deflecting, or nullifying magical energies, integrating these composites into APA containment and suppression gear.</p>
+
+    <h3>Reverse-Engineering Artifacts</h3>
+    <p>Disassemble recovered magical artifacts to map enchantment matrices and develop neutralization methods for field use.</p>
+
+    <h3>Resilience Testing Under Magical Strain</h3>
+    <p>Test materials under high-level magical stress simulations to refine field equipment and containment protocols.</p>
+  </section>
+
+  <section>
+    <h2>APA POSITION</h2>
+    <p>Magic cannot be eradicated, but it can be contained and neutralized. Material Sciences ensures APA field teams are equipped to counter magical environments and threats effectively.</p>
+  </section>
+
+  <hr style="border-color:#00b0c0; width: 80%; margin: 2rem auto;" />
+
+  <section>
+    <h2>Research Article: Magical Materials Report</h2>
+    <p>This report documents the recharge potential of various materials under controlled magical extraction procedures for field operatives and researchers:</p>
+
+    <table>
+      <tr>
+        <th>Material</th>
+        <th>Magical Potency</th>
+        <th>Spell Slots Refilled (1kg)</th>
+        <th>Example/Reasoning</th>
+      </tr>
+      <tr><td>Mithral</td><td>Very high</td><td>15 spell levels</td><td>Rare magical metal, excellent recharge potential.</td></tr>
+      <tr><td>Uranium</td><td>Extremely high</td><td>30 spell levels</td><td>Potent due to radioactive nature, high risk profile.</td></tr>
+      <tr><td>Platinum</td><td>High</td><td>6 spell levels</td><td>Rare and highly valued material.</td></tr>
+      <tr><td>Gold</td><td>Moderate</td><td>4 spell levels</td><td>Contains magic but needs quantity for high-level recharge.</td></tr>
+      <tr><td>Silver</td><td>Low to moderate</td><td>1 spell level</td><td>Historically tied to purity and minor magical interactions.</td></tr>
+      <tr><td>Copper</td><td>Low</td><td>0.1 spell levels</td><td>Abundant and mundane, low recharge capability.</td></tr>
+      <tr><td>Iron</td><td>Minimal</td><td>0 spell levels</td><td>Too mundane to provide magical energy.</td></tr>
+      <tr><td>Lead</td><td>Very low</td><td>Drains spell levels</td><td>Dense, blocks and drains magical energy.</td></tr>
+    </table>
+  </section>
+
+  <a class="button" href="#">DEVELOPMENT OF ANTI-MAGIC COMPOSITES</a>
+  <a class ="button" href="research.html" onclick="playBeep();">&larr; Return to Research Divison</a>
+
+  <audio id="sfx" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <script>
+    function playBeepAndNavigate(e) {
+      e.preventDefault();
+      const audio = document.getElementById('sfx');
+      const link = e.currentTarget.getAttribute('href');
+
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().then(() => {
+          setTimeout(() => {
+            window.location.href = link;
+          }, 300);
+        }).catch(() => {
+          window.location.href = link;
+        });
+      } else {
+        window.location.href = link;
+      }
+    }
+
+    document.querySelectorAll('a.button').forEach(link => {
+      link.removeEventListener('click', playBeepAndNavigate);
+      link.addEventListener('click', playBeepAndNavigate);
+    });
+  </script>
+</body>
+</html>
+
