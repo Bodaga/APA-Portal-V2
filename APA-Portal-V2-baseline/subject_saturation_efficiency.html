@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Saturation Efficiency</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+  <style>body{margin:0;font-family:'Courier New',Courier,monospace;background-color:#0b0e1c;color:#d0d0d0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh}header{width:100%;padding:1rem;background-color:#141824;display:flex;align-items:center;justify-content:center;flex-direction:column}header img{max-width:100px;margin-bottom:0.5rem}h1{margin:0;font-size:1.2rem;color:#00b0c0;text-align:center}main{padding:2rem;max-width:700px;text-align:left}h2{color:#00b0c0;margin-top:1rem}p,ul{margin:0.5rem 0}footer{padding:1rem;font-size:0.8rem;color:#555;text-align:center}a.back{display:inline-block;margin-top:1rem;color:#00b0c0;text-decoration:none;border:1px solid #00b0c0;padding:0.5rem;border-radius:4px;transition:background 0.3s}a.back:hover{background-color:#00b0c0;color:#0b0e1c}blockquote{border-left:2px solid #00b0c0;padding-left:1rem;color:#00b0c0;margin:1rem 0}</style>
+<body>
+  <main>
+    <section class="document">
+      <h1>File 3: “Subject Saturation Efficiency”</h1>
+      <p><strong>APA Technical White Paper (Excerpt)</strong></p>
+      <p><strong>Prepared for:</strong> Internal Arcane Metrics Review Panel</p>
+
+      <blockquote>
+        <p>The Subject Saturation Efficiency (SSE) index is a composite measure indicating the percentage of a civilian test population demonstrating persistent magical influence post-agent dispersion.</p>
+
+        <p>Current SSE rates for Site V12-A exceed prior models, reaching a <strong>stable 72.4%</strong> in Zone Blue and <strong>59.1%</strong> in Zone Green.</p>
+
+        <p>SSE success is largely contingent on:</p>
+        <ul>
+          <li>Fluoride-binding catalysts in primary water intake</li>
+          <li>Sub-auditory suggestion via utility infrastructure</li>
+          <li>Use of spiritual intermediaries (see: Field Test - Phase II)</li>
+        </ul>
+
+        <p><strong>Red Flags:</strong></p>
+        <ul>
+          <li>SSE drops below 40% are correlated with spontaneous subject-driven rebellion or ritual interference.</li>
+        </ul>
+
+        <p><strong>Actionable Recommendation:</strong> Transfer key research out pending confirmation of non APA magical activity within region - See File .</p>
+
+        <p><strong>Classification:</strong> &mdash; Eyes Only &mdash; No External Transmission</p>
+      </blockquote>
+    </section>
+
+  <a href="research.html" class="back" onclick="playBeep();">&larr; Return to Research Divison</a>
+  </main>
+
+  <audio id="sfx" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <script>
+    function playBeepAndNavigate(e) {
+        e.preventDefault();
+        const audio = document.getElementById('sfx');
+        const link = e.currentTarget.getAttribute('href');
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play().then(() => {
+                setTimeout(() => {
+                    window.location.href = link;
+                }, 300);
+            }).catch(() => {
+                window.location.href = link;
+            });
+        } else {
+            window.location.href = link;
+        }
+    }
+
+    function attachAudioListeners() {
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.removeEventListener('click', playBeepAndNavigate);
+            link.addEventListener('click', playBeepAndNavigate);
+        });
+    }
+
+    attachAudioListeners();
+    window.addEventListener('pageshow', attachAudioListeners);
+  </script>
+</body>
+</html>
